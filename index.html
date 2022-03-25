@@ -12,23 +12,22 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-
-		<section>
-			<button type="button" name="button">Draw Cards</button>
-			<button id='war' type="button" name="button">WAR!</button>
-			<h4 id="howManyCardsLeft"></h4>
-			<h3>Who won this round?</h3>
-			<h3>Who won the game</h3>
+		<section class="container">
+			<section class="title">
+				<button type="button" name="button">Draw Cards</button>
+				<h4 id="howManyCardsLeft"></h4>
+				<h3>Who won this round?</h3>
+				<h3 id="wonGame">Who won the game</h3>
+			</section>
+			<section class="gamePlay">
+				<h2>Player 1</h2>
+				<img id='player1' src="" alt="">
+				<h4 id="cards1"></h4>
+				<h2>Player 2</h2>
+				<img id='player2' src="" alt="">
+				<h4 id="cards2"></h4>
+			</section>
 		</section>
-		<section>
-			<h2>Player 1</h2>
-			<img id='player1' src="" alt="">
-			<h4 id="cards1"></h4>
-			<h2>Player 2</h2>
-			<img id='player2' src="" alt="">
-			<h4 id="cards2"></h4>
-		</section>
-		
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
