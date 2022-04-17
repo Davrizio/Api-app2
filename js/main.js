@@ -1,4 +1,4 @@
-//show how many cards each player has and how many left in the deck DONE
+//show how many cards each player has and how many left in the deck ADDD 2 to winning count...not just 1!
 //player wins when they have all cards in deck
 //show additional cards and give winner cards during war
 //have war button show up when cards are the same
@@ -42,10 +42,10 @@ function getFetch(){
         document.querySelector('#player2').src = data.cards[1].image
         if(val1 > val2){
           document.querySelector('h3').innerText = 'Player 1 WON!'
-          console.log(++count1)
+          document.querySelector('#cards1').innerText = ++count1
         }else if(val1 < val2){
           document.querySelector('h3').innerText = 'Player 2 WON!'
-          console.log(++count2)
+          document.querySelector('#cards2').innerHTML = ++count2
         }else{
           document.querySelector('h3').innerText = 'WAR!'
         }
