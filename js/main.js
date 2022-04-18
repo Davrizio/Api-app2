@@ -1,3 +1,13 @@
+//show how many cards each player has and how many left in the deck DONE
+//player wins when they have all cards in deck
+//show additional cards and give winner cards during war
+//have war button show up when cards are the same
+//allow user to choose multiple decks with conditional so they don't choose too many (over 5 return "that's crazy!")
+
+
+
+
+
 //Get the deck
 let deckId = ''
 
@@ -14,6 +24,9 @@ fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
 
 document.querySelector('button').addEventListener('click', getFetch)
 
+let count1 = 0
+let count2 = 0
+
 function getFetch(){
   
   const url = `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`
@@ -22,18 +35,22 @@ function getFetch(){
       .then(res => res.json()) // parse response as JSON
       .then(data => {
         console.log(data)
-        let val1 = Number(cardValue( data.cards[0].value ))
-        let val2 = Number(cardValue( data.cards[1].value ))
+        let val1 = Number(cardValue(data.cards[0].value))
+        let val2 = Number(cardValue(data.cards[1].value))
+        document.querySelector('#howManyCardsLeft').innerText = data.remaining
         document.querySelector('#player1').src = data.cards[0].image
         document.querySelector('#player2').src = data.cards[1].image
         if(val1 > val2){
           document.querySelector('h3').innerText = 'Player 1 WON!'
+          console.log(++count1)
         }else if(val1 < val2){
           document.querySelector('h3').innerText = 'Player 2 WON!'
+          console.log(++count2)
         }else{
           document.querySelector('h3').innerText = 'WAR!'
         }
-        
+      
+
       })
       .catch(err => {
           console.log(`error ${err}`)
