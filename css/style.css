@@ -24,7 +24,7 @@ img{
   border: solid black 3px;
   border-radius: 4px;
   height: 750px;
-  background: green;
+  background: rgb(53 101 77);
 }
 .title{
   display:flex;
@@ -39,13 +39,22 @@ img{
 }
 .gamePlay{
   display:flex;
-  align-items: center;
-  flex-flow: row;
-  height: 250px;
+  align-items:flex-start;
+  flex-flow: row wrap;
+  height: 450px;
   width: 500px;
   border: solid black 2px;
   border-radius: 4px;
   background: white;
+}
+h2{
+  width: 50%;
+  text-align: center;
+}
+
+h4{
+  width: 50%;
+  text-align: center;
 }
 
 
