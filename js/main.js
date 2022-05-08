@@ -38,11 +38,11 @@ function getFetch(){
         document.querySelector('#player2').src = data.cards[1].image
         
         if(val1 > val2){
-          document.querySelector('#round').innerText = 'Player 1 WON that round'
+          document.querySelector('#wonGame').innerText = 'Player 1 WON that round'
           count1 = count1 + 2
           document.querySelector('#cards1').innerText = count1
         }else if(val1 < val2){
-          document.querySelector('#round').innerText = 'Player 2 WON that round'
+          document.querySelector('#wonGame').innerText = 'Player 2 WON that round'
           count2 = count2 + 2
           document.querySelector('#cards2').innerText = count2
         }else{
