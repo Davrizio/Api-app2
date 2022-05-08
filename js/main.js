@@ -38,48 +38,28 @@ function getFetch(){
         document.querySelector('#player2').src = data.cards[1].image
         
         if(val1 > val2){
-          document.querySelector('h3').innerText = 'Player 1 WON that round'
+          document.querySelector('#round').innerText = 'Player 1 WON that round'
           count1 = count1 + 2
           document.querySelector('#cards1').innerText = count1
         }else if(val1 < val2){
-          document.querySelector('h3').innerText = 'Player 2 WON that round'
+          document.querySelector('#round').innerText = 'Player 2 WON that round'
           count2 = count2 + 2
           document.querySelector('#cards2').innerText = count2
         }else{
           document.querySelector('h3').innerText = `No WAR...it's all good, here is your card`
-          count1 = count1 + 1
-          count2 = count2 + 1
+          count1 = ++count1
+          count2 = ++count2
+          document.querySelector('#cards2').innerText = count2
+          document.querySelector('#cards1').innerText = count1
         }
 
         if(data.remaining === 0 && count1 > count2){
-          document.querySelector('#wonGame').innerText = 'Player 1 WON the game'
+          document.querySelector('#wonGame').innerText = 'Player 1 WON'
         }else if(data.remaining === 0 && count1 < count2){
-          document.querySelector('#wonGame').innerText = 'Player 2 WON the game'
+          document.querySelector('#wonGame').innerText = 'Player 2 WON'
         }
-
-        // fetch(`https://www.deckofcardsapi.com/api/deck/${deckId}/pile/player1/add/?cards=${player1Card}`)
-        //     .then(function (response){
-        //     if (response.ok){
-        //       return response.json();
-        //     }
-        //       return Promise.reject(response);
-        //     }).then(function (data){
-        //       console.log(data);
-        //    }).catch(function (error) {
-        //       console.warn('Something went wrong.', error);
-        //   });
-        // fetch(`https://www.deckofcardsapi.com/api/deck/${deckId}/pile/player1/add/?cards=${player2Card}`)
-        //     .then(function (response){
-        //     if (response.ok){
-        //       return response.json();
-        //    }
-        //      return Promise.reject(response);
-        //     }).then(function (data){
-        //       console.log(data);
-        //    }).catch(function (error) {
-        //      console.warn('Something went wrong.', error);
-        //  });
       })
+
       .catch(err => {
           console.log(`error ${err}`)
       });
